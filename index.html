@@ -20,10 +20,10 @@
         </div>
         <ul>
           
-          <li><a href="#">About</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#contact">Contact</a></li>
         
         </ul>
         <img src="vecell_logo.jpeg.jpg" alt="VECELL Logo">
@@ -35,7 +35,7 @@
     
 
 <!-- About section -->
-<div class="about">
+<div id="about" class="about">
     <h2>About Us</h2>
     <p>Welcome to the Ajay Kumar Garg Engineering College Relationship Workshop! Our workshop is dedicated to helping individuals build stronger connections and improve their understanding of relationships. With experienced human values teachers, we cover various topics such as relationship dynamics, effective communication, conflict resolution, intention setting, and harmony in relationships.</p>
     <p>Join us on this journey of self-discovery and growth as we explore the nuances of meaningful connections. Whether you're a student, professional, or anyone interested in enhancing your interpersonal skills, our workshop is open to all.</p>
@@ -78,7 +78,7 @@
 <div class="header">
     <h2>My Gallery</h2>
 </div>
-<div class="container">
+<div id="gallery" class="container">
     
     <div class="gallery">
         <a href="image1.jpg" data lightbox="workshop" data-title="Relatinship workshop session">
@@ -111,7 +111,7 @@
     </div>
 </div>
     <!---------Faqs section-------------->
-    <div class="wrapper">
+    <div id="faqs" class="wrapper">
         
         <h1>Frequently Asked Questions(FAQS)</h1>
         <div class="faq">
@@ -161,12 +161,13 @@
         </div>
     </div>
     <!----------------Footer section--------------->
-    <div class="footer">
+    <div id="contact" class="footer">
         <div class="col-1">
             <h3>QUICK LINKS</h3>
-            <a href="#">Home</a>
             <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#faqs">Faqs</a>
+            <a href="#contact">Contact</a>
         </div>
         <div class="col-2">
             <h3>NEWSLETTER</h3>
@@ -219,6 +220,31 @@
  <script src="lightbox-plus-jquery.js">
 
  </script>
-   
-</body>
+        <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get all the anchor links in the navbar
+      var navLinks = document.querySelectorAll('.navbar a');
+  
+      // Attach click event listener to each link
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent default behavior of the link
+  
+          // Get the target section ID from the link's href
+          var targetId = link.getAttribute('href').substring(1);
+  
+          // Find the target section by ID
+          var targetSection = document.getElementById(targetId);
+  
+          // Scroll to the target section smoothly
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+  </body>
 </html>
