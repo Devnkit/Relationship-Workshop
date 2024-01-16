@@ -204,69 +204,56 @@ font-weight: bold;
 
 
 /*----------------footer----------------*/
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'poppins',sans-serif;
-    box-sizing: border-box;
-}
-/* Existing Footer Styles */
+/* Footer Styles */
 
 .footer {
-    margin-top: 150px;
-    width: 100%;
-    max-height: 400px;
-    padding: 100px 5%;
+    margin-top: 30px;
+    padding: 30px 5%;
     background: #22252c;
     color: #efefef;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     border-top: solid 4px #FAC805;
     border-radius: 9px;
-    margin-bottom: 0%;
     box-sizing: border-box;
 }
 
-.footer div {
+.col-1,
+.col-2,
+.col-3 {
+    flex: 1;
     text-align: center;
-}
-
-.col-2 {
-    flex-grow: 2;
-}
-
-.footer div h3 {
-    font-weight: 300;
-    margin-bottom: 30px;
-    letter-spacing: 3px;
+    margin-bottom: 20px;
 }
 
 .col-1 a {
-    display: block;
     text-decoration: none;
     color: #efefef;
+    display: block;
     margin-bottom: 10px;
 }
 
 form input {
-    width: 400px;
-    height: 30px;
-    border-radius: 4px;
-    text-align: center;
+    width: 100%;
+    max-width: 300px;
     margin-top: 20px;
-    margin-bottom: 40px;
-    outline: none;
-    border: none;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 form button {
-    background: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    border-radius: 30px;
-    padding: 10px 30px;
-    font-size: 15px;
-    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .social-icons i {
@@ -278,24 +265,16 @@ form button {
 .copyright {
     width: 100%;
     text-align: center;
-    padding: 25px 0;
+    padding: 20px 0;
     background: #262626;
     font-weight: 300;
-    margin-top: 20px;
 }
 
 .copyright i {
     color: #ff004f;
 }
 
-#msg {
-    color: #61b752;
-    margin-top: -40px;
-    display: block;
-}
-
-/* Media Queries for responsiveness */
-
+/* Add a media query for smaller screens */
 @media screen and (max-width: 768px) {
     .footer {
         flex-direction: column;
@@ -303,16 +282,19 @@ form button {
         text-align: center;
     }
 
-    .footer div {
-        margin-bottom: 20px;
-    }
-
-    form input {
+    .col-1,
+    .col-2,
+    .col-3 {
         width: 100%;
-        max-width: 300px;
+        max-width: 100%;
     }
 
+    form input,
     form button {
         max-width: 100%;
+    }
+
+    .social-icons {
+        margin-top: 10px;
     }
 }
