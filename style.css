@@ -10,6 +10,7 @@
   .navbar img {
     width: 90px;
     height: 90px;
+      mix-blend-mode:darken;
   }
 
   .navbar ul {
